@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{47E323AA-D235-463A-B591-7AC3E9CE2E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegram.Bot.Extensions.Logging", "src\Telegram.Bot.Extensions.Logging\Telegram.Bot.Extensions.Logging.csproj", "{720DB546-2100-43C1-8704-9A8C921A0CAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{720DB546-2100-43C1-8704-9A8C921A0CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720DB546-2100-43C1-8704-9A8C921A0CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720DB546-2100-43C1-8704-9A8C921A0CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720DB546-2100-43C1-8704-9A8C921A0CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{720DB546-2100-43C1-8704-9A8C921A0CAC} = {47E323AA-D235-463A-B591-7AC3E9CE2E6E}
+	EndGlobalSection
+EndGlobal
