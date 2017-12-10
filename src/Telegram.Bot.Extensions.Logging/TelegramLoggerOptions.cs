@@ -1,4 +1,6 @@
-﻿namespace Telegram.Bot.Extensions.Logging
+﻿using Telegram.Bot.Types;
+
+namespace Telegram.Bot.Extensions.Logging
 {
     public class TelegramLoggerOptions
     {
@@ -7,7 +9,7 @@
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)
         /// </summary>
-        public string LogReceiverId { get; set; }
+        public ChatId ChatId { get; set; }
 
         /// <summary>
         /// The name of the source of logs

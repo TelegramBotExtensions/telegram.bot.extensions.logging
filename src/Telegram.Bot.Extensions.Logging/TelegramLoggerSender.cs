@@ -12,15 +12,15 @@ namespace Telegram.Bot.Extensions.Logging
         private readonly BlockingCollection<string> _messageQueue = new BlockingCollection<string>(MaxQueuedMessages);
 
         private readonly ITelegramBotClient _botClient;
-        private readonly ChatId _receiver;
+        private readonly ChatId _chatId;
 
         private readonly Task _outputTask;
 
-        public TelegramLoggerSender(ITelegramBotClient botClient, ChatId receiver)
+        public TelegramLoggerSender(ITelegramBotClient botClient, ChatId chatId)
         {
             // Start Telegram message queue processor
             _botClient = botClient;
-            _receiver = receiver;
+            _chatId = chatId;
 
             _outputTask = Task.Factory.StartNew(
                 ProcessLogQueue,
@@ -48,7 +48,7 @@ namespace Telegram.Bot.Extensions.Logging
         {
             try
             {
-                Task.Run(() => _botClient.SendTextMessageAsync(_receiver, message));
+                Task.Run(() => _botClient.SendTextMessageAsync(_chatId, message));
             }
             catch (Exception)
             {

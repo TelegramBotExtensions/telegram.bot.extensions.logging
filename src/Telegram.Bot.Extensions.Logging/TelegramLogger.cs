@@ -29,7 +29,7 @@ namespace Telegram.Bot.Extensions.Logging
             ITelegramBotClient botClient,
             TelegramLoggerOptions options,
             Func<string, LogLevel, bool> filter)
-            : this(category, new TelegramLoggerSender(botClient, options.LogReceiverId), options, filter)
+            : this(category, new TelegramLoggerSender(botClient, options.ChatId), options, filter)
         { }
 
         public void Log<TState>(

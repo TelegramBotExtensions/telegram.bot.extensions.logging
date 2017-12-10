@@ -18,7 +18,7 @@ namespace Telegram.Bot.Extensions.Logging
             TelegramLoggerOptions options,
             Func<string, LogLevel, bool> filter)
         {
-            if (string.IsNullOrEmpty(options.LogReceiverId) || string.IsNullOrWhiteSpace(options.LogReceiverId))
+            if (string.IsNullOrEmpty(options.ChatId) || string.IsNullOrWhiteSpace(options.ChatId))
             {
                 throw new ArgumentException("Log receiver Id should not be null, empty or be a whitespace");
             }
@@ -30,7 +30,7 @@ namespace Telegram.Bot.Extensions.Logging
 
             _filter = filter;
             _options = options;
-            _messageQueue = new TelegramLoggerSender(botClient, options.LogReceiverId);
+            _messageQueue = new TelegramLoggerSender(botClient, options.ChatId);
         }
 
         public void Dispose()
