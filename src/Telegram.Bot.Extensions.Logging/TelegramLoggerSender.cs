@@ -46,14 +46,18 @@ namespace Telegram.Bot.Extensions.Logging
 
         private void WriteMessage(string message)
         {
-            try
+            Task.Run(async () =>
             {
-                Task.Run(() => _botClient.SendTextMessageAsync(_chatId, message));
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
+                try
+                {
+                    await _botClient.SendTextMessageAsync(_chatId, message)
+                        .ConfigureAwait(false);
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
+            });
         }
 
         private void ProcessLogQueue()
