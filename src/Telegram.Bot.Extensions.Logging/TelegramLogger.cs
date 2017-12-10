@@ -83,7 +83,8 @@ namespace Telegram.Bot.Extensions.Logging
 
             if (!string.IsNullOrEmpty(message))
             {
-                logBuilder.AppendLine($"\n{message}");
+                logBuilder.AppendLine();
+                logBuilder.AppendLine(message);
             }
 
             if (exception != null)
@@ -100,7 +101,9 @@ namespace Telegram.Bot.Extensions.Logging
             if (logBuilder.Length > 4096)
             {
                 logBuilder.Remove(4080, logBuilder.Length);
-                logBuilder.Append("...\n...");
+                logBuilder.Append("...");
+                logBuilder.AppendLine();
+                logBuilder.Append("...");
             }
 
             var content = logBuilder.ToString();
@@ -114,7 +117,6 @@ namespace Telegram.Bot.Extensions.Logging
             }
             _logBuilder = logBuilder;
         }
-
 
         private static string GetLogLevelString(LogLevel logLevel)
         {
