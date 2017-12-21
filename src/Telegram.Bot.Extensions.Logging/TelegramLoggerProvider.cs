@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Telegram.Bot.Extensions.Logging
 {
@@ -12,6 +13,11 @@ namespace Telegram.Bot.Extensions.Logging
         private readonly Func<string, LogLevel, bool> _filter;
         private readonly TelegramLoggerSender _messageQueue;
         private readonly TelegramLoggerOptions _options;
+
+        public TelegramLoggerProvider(IOptions<TelegramLoggerOptions> options)
+        {
+
+        }
 
         public TelegramLoggerProvider(
             ITelegramBotClient botClient,
