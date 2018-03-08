@@ -14,7 +14,7 @@
     <IncludeSource>True</IncludeSource>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Tuscen/telegram.bot.extensions.logging.git</RepositoryUrl>
-    <version>0.0.1-alpha</version>
+    <version>0.0.1-alpha3</version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>

@@ -100,7 +100,7 @@ namespace Telegram.Bot.Extensions.Logging
 
             if (logBuilder.Length > 4096)
             {
-                logBuilder.Remove(4080, logBuilder.Length);
+                logBuilder.Remove(4080, logBuilder.Length - 4080);
                 logBuilder.Append("...");
                 logBuilder.AppendLine();
                 logBuilder.Append("...");
